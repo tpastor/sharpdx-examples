@@ -11,14 +11,6 @@ namespace SharpExamples
     /// </summary>
     public abstract class ICamera 
     {
-
-        /// <summary>
-        /// Gets a value indicating whether this <see cref="ICamera"/> has moved.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if hasmoved; otherwise, <c>false</c>.
-        /// </value>
-        public abstract bool Hasmoved { get; }
         /// <summary>
         /// Gets or sets the position.
         /// </summary>

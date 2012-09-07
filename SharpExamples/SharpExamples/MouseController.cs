@@ -37,12 +37,12 @@ namespace SharpExamples
         }
 
         public bool Update()
-        {
+        {            
             if ((Input.MouseDown & MouseButtons.Left) == MouseButtons.Left)
             {
                 // When mouse button is clicked, store cursor position and angles
                 if ((Input.MousePressed & MouseButtons.Left) == MouseButtons.Left)
-                {
+                {                    
                     mouseOrigin = Input.MousePoint;
 
                     // Get normalized Vector
@@ -57,8 +57,7 @@ namespace SharpExamples
                 angleDeltaX = -(Input.MousePoint.X - mouseOrigin.X) * Sensitivity;
                 angleDeltaY = (Input.MousePoint.Y - mouseOrigin.Y) * Sensitivity;
 
-                SetByAngles(angleOriginX + angleDeltaX, angleOriginY + angleDeltaY);
-
+                SetByAngles(angleOriginX + angleDeltaX, angleOriginY + angleDeltaY);                
                 return true;
             }
 
@@ -83,6 +82,7 @@ namespace SharpExamples
                 rightDragY += rightDragDeltaY;
             }
 
+            
             return false;
         }
     }

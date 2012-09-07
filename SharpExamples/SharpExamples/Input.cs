@@ -17,11 +17,16 @@ namespace SharpExamples
         public Point MousePoint { get; private set; }
         public int MouseWheelDelta { get; private set; }
 
-        Form form;
+        public void SetMousePosition(int x, int y)
+        {
+            Cursor.Position = Form.PointToScreen(new Point(x, y));
+        }
+
+        Form Form;
 
         public Input(Form form)
         {
-            this.form = form;            
+            this.Form = form;            
             form.KeyDown += new KeyEventHandler(form_KeyDown);
             form.KeyUp += new KeyEventHandler(form_KeyUp);
             form.MouseDown += new MouseEventHandler(form_MouseDown);
@@ -72,7 +77,7 @@ namespace SharpExamples
                 return;
 
             // Don't consider mouse clicks outside of the client area
-            if (form.Focused == false || form.ClientRectangle.Contains(MousePoint) == false)
+            if (Form.Focused == false || Form.ClientRectangle.Contains(MousePoint) == false)
                 return;
 
             if (e.Button == MouseButtons.Left)

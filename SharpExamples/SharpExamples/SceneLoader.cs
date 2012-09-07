@@ -7,6 +7,7 @@ using SharpDX.Direct3D11;
 using Buffer = SharpDX.Direct3D11.Buffer;
 using Device = SharpDX.Direct3D11.Device;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace SharpExamples
 {
@@ -77,7 +78,8 @@ namespace SharpExamples
             mMaterials[(int)aiMesh.mMaterialIndex].GetTextureDiffuse0(difuse);
             modelteste.difuseTextureName = difuse.Data;
 
-            modelteste.ShaderResourceView = ShaderResourceView.FromFile(device, directory + "\\" + modelteste.difuseTextureName);
+            String fullPath = String.IsNullOrEmpty(directory) ? modelteste.difuseTextureName : Path.Combine(directory, modelteste.difuseTextureName);
+            modelteste.ShaderResourceView = ShaderResourceView.FromFile(device, fullPath);
 
             return modelteste;
         }

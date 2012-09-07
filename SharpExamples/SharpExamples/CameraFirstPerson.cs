@@ -34,8 +34,7 @@ namespace SharpExamples
 
         private Matrix viewProjection;
         private Vector3 _position = Vector3.UnitX;        
-        private Vector3 _target = Vector3.Zero;
-        private bool _hasmoved = true;
+        private Vector3 _target = Vector3.Zero;        
         private Vector3 _up = Vector3.UnitY;
         private Quaternion _rotation = Quaternion.Identity;
         private float _fieldOdView =(float) Math.PI / 4;
@@ -108,10 +107,6 @@ namespace SharpExamples
 
         #region ICamera Members
 
-        public override bool Hasmoved
-        {
-            get { return _hasmoved; }
-        }
 
         public override Vector3 Position
         {
@@ -257,52 +252,45 @@ namespace SharpExamples
         }
 
         
-        System.Drawing.Point old = new System.Drawing.Point();
         private void UpdateCamera()
         {
-            _hasmoved = false;
+            
+            float xDifference = input.MousePoint.X - width / 2;
+            float yDifference = input.MousePoint.Y - height / 2;
+            leftrightRot += rotationSpeed * xDifference;
+            updownRot -= rotationSpeed * yDifference;                
+            UpdateViewMatrix();
 
-            if (input.MousePoint.X != old.X || input.MousePoint.Y != old.Y)
-            {
-                float xDifference = input.MousePoint.X - old.X;
-                float yDifference = input.MousePoint.Y - old.Y;
-                leftrightRot -= rotationSpeed * xDifference;
-                updownRot -= rotationSpeed * yDifference;
-                old = input.MousePoint;                
-                UpdateViewMatrix();
-                _hasmoved = true;
-            }
-
+            input.SetMousePosition(width / 2, height / 2);
 
             if (input.KeysDown.Contains(Keys.Up) || input.KeysDown.Contains(Keys.W))      //Forward
             {
                 AddToCameraPosition(new Vector3(0, 0, -sensibility));
-                _hasmoved = true;
             }
             if (input.KeysDown.Contains(Keys.Down) || input.KeysDown.Contains(Keys.S))    //Backward
             {
                 AddToCameraPosition(new Vector3(0, 0, sensibility));
-                _hasmoved = true;
+                
             }
             if (input.KeysDown.Contains(Keys.Right) || input.KeysDown.Contains(Keys.D))   //Right
             {
                 AddToCameraPosition(new Vector3(-sensibility, 0, 0));
-                _hasmoved = true;
+                
             }
             if (input.KeysDown.Contains(Keys.Left) || input.KeysDown.Contains(Keys.A))    //Left
             {
                 AddToCameraPosition(new Vector3(sensibility, 0, 0));
-                _hasmoved = true;
+                
             }
             if (input.KeysDown.Contains(Keys.Q))                                     //Up
             {
                 AddToCameraPosition(new Vector3(0, sensibility, 0));
-                _hasmoved = true;
+                
             }
             if (input.KeysDown.Contains(Keys.Z))                                     //Down
             {
                 AddToCameraPosition(new Vector3(0, -sensibility, 0));
-                _hasmoved = true;
+                
             }
         }
         
