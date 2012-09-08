@@ -71,7 +71,6 @@
     <Compile Include="CameraFirstPerson.cs" />
     <Compile Include="ICamera.cs" />
     <Compile Include="Clock.cs" />
-    <Compile Include="MouseController.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="ModelFacilities\BatchInformation.cs" />
     <Compile Include="ModelFacilities\IVertexType.cs" />

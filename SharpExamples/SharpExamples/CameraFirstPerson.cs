@@ -296,10 +296,6 @@ namespace SharpExamples
         
         #endregion
 
-#if WINDOWS_PHONE
-        TouchCollection tcpressed;        
-#endif
-
         public float UpDownRot
         {
             get { return updownRot; }
