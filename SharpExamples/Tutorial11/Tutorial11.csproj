@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DD2CD54D-AED6-4465-A2A1-1178D299770D}</ProjectGuid>
+    <ProjectGuid>{115E07FF-7EA3-4B01-92D2-38E2FADC8454}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tutorial11</RootNamespace>
