@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial25", "Tutorial25\Tu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial26", "Tutorial26\Tutorial26.csproj", "{265E07FF-7EA3-4B01-92D2-38E2FADC8454}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial27", "Tutorial27\Tutorial27.csproj", "{275E07FF-7EA3-4B01-92D2-38E2FADC8454}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
