@@ -1,0 +1,2 @@
+C:\Users\tpastor\Desktop\rastertekdx\Dev\TerrainTutorial2\obj\x86\Debug\Engine.Properties.Resources.resources
+C:\Users\tpastor\Desktop\rastertekdx\Dev\TerrainTutorial2\obj\x86\Debug\TerrainTutorial2.csproj.GenerateResource.Cache
